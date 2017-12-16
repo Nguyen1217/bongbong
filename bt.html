@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Đồng hồ đếm ngược bằng JS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+       <body onload = "startTime()">
+       <div id="result"></div>
+        <script type="text/javascript">
+         function startTime()
+         {
+            var Today = new Date();
+                h = Today.getHours();
+                m = Today.getMinutes();
+                s = Today.getSeconds();
+                m = checktime(m);
+                s = checktime(s);
+            function checktime(i)
+            {
+                if(i<10){
+                i = "0" + i;
+                }
+            return i;
+            } 
+        
+            document.getElementById("result").innerHTML = h + ":" + m + ":" + s;
+            var t = setTimeout(function () {
+                startTime();
+            }, 500);
+          
+         }  
+        
+
+          
+           
+        </script>
+    </body>
+    
+
+</html>
